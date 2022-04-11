@@ -1,0 +1,29 @@
+
+
+
+<button (click)="show_main()">Показать главную?</button><br>
+<div *ngIf="showMain"> <app-main></app-main> </div>
+
+
+
+<button (click)="switch()">Contacts_Or_About_Us</button>
+
+
+<!--<button (click)="count2 = 1">Opera</button>-->
+<!--<button (click)="count2 = 2">Chrome</button>-->
+
+
+<div [ngSwitch]="count2">
+  <div *ngSwitchCase="1">
+    <app-about></app-about>
+  </div>
+  <div *ngSwitchCase="2">
+    <app-contacts></app-contacts>
+  </div>
+</div>
+
+<button (click)="toggle()">Show Lacture2 Material?</button><br>
+<div *ngIf="condition"> <app-lecture2></app-lecture2> </div>
+
+
+

@@ -25,5 +25,11 @@
 <button (click)="toggle()">Show Lacture2 Material?</button><br>
 <div *ngIf="condition"> <app-lecture2></app-lecture2> </div>
 
+<app-todo></app-todo>
+
+<app-child [name]="name"></app-child>
+<input type="text" [(ngModel)]="name" />
+<input type="number" [(ngModel)]="age" />
+
 
 

@@ -45,4 +45,6 @@ export class AppComponent implements OnChanges {
   private log(msg: string) {
     console.log(msg);
   }
+
+  nummers_array = [1, 2, 3, 4, 5];
 }

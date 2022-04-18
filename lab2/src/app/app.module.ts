@@ -13,6 +13,9 @@ import { TodoFormComponent } from './todo/form/form.component';
 import { ModelsComponent } from './todo/models/models.component';
 import { TodoItemComponent } from './todo/list/item/item.component';
 import { ChildComponent } from './child/child.component';
+import { BoldDirective } from './shared/directives/bold.directive';
+import { OddEvenPipe } from './shared/pipes/odd-even.pipe';
+import { ZoomDirective } from './shared/directives/zoom.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { ChildComponent } from './child/child.component';
     TodoFormComponent,
     ModelsComponent,
     TodoItemComponent,
-    ChildComponent
+    ChildComponent,
+    BoldDirective,
+    OddEvenPipe,
+    ZoomDirective
   ],
   imports: [
     BrowserModule,

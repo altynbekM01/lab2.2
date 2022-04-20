@@ -1,45 +1,60 @@
 
 
 
-<button (click)="show_main()">Показать главную?</button><br>
-<div *ngIf="showMain"> <app-main></app-main> </div>
+
+
+<div *ngIf = "showPreviouse"> <button (click)="show_main()">Показать главную?</button><br>
+  <div *ngIf="showMain"> <app-main></app-main> </div>
 
 
 
-<button (click)="switch()">Contacts_Or_About_Us</button>
+  <button (click)="switch()">Contacts_Or_About_Us</button>
 
 
-<!--<button (click)="count2 = 1">Opera</button>-->
-<!--<button (click)="count2 = 2">Chrome</button>-->
+  <!--<button (click)="count2 = 1">Opera</button>-->
+  <!--<button (click)="count2 = 2">Chrome</button>-->
 
 
-<div [ngSwitch]="count2">
-  <div *ngSwitchCase="1">
-    <app-about></app-about>
+  <div [ngSwitch]="count2">
+    <div *ngSwitchCase="1">
+      <app-about></app-about>
+    </div>
+    <div *ngSwitchCase="2">
+      <app-contacts></app-contacts>
+    </div>
   </div>
-  <div *ngSwitchCase="2">
-    <app-contacts></app-contacts>
+
+  <button (click)="toggle()">Show Lacture2 Material?</button><br>
+  <div *ngIf="condition"> <app-lecture2></app-lecture2> </div>
+
+  <app-todo></app-todo>
+
+  <app-child [name]="name"></app-child>
+  <input type="text" [(ngModel)]="name" />
+  <input type="number" [(ngModel)]="age" />
+
+
+
+  <!--Pipes and Directives-->
+  <div style="background-color: antiquewhite">
+    <div style="margin-top: 50px">Все элементы: {{nummers_array}}</div>
+    <div >Нечетные элементы: {{nummers_array | oddEven}}</div>
+
+    <p appZoom>Hello World</p>
   </div>
 </div>
 
-<button (click)="toggle()">Show Lacture2 Material?</button><br>
-<div *ngIf="condition"> <app-lecture2></app-lecture2> </div>
+<button (click)="showPreviouse = !showPreviouse">ShowPreviouse</button>
 
-<app-todo></app-todo>
-
-<app-child [name]="name"></app-child>
-<input type="text" [(ngModel)]="name" />
-<input type="number" [(ngModel)]="age" />
-
-
-
-<!--Pipes and Directives-->
-<div style="background-color: antiquewhite">
-  <div style="margin-top: 50px">Все элементы: {{nummers_array}}</div>
-  <div >Нечетные элементы: {{nummers_array | oddEven}}</div>
-
-  <p appZoom>Hello World</p>
+<div class="nav">
+  <button routerLink="/main" routerLinkActive="active">Main</button>
+  <button routerLink="/about-us" routerLinkActive="active">About us</button>
+  <button routerLink="/contacts" routerLinkActive="active"> Contacts</button>
+<!--  <button routerLink="/service" routerLinkActive="active">service</button>-->
+<!--  <button routerLink="/forms" routerLinkActive="active">forms</button>-->
 </div>
+<router-outlet></router-outlet>
+
 
 
 

@@ -1,13 +1,10 @@
-<p>contacts works!</p>
-<img [src]="imageUrl" alt="">
-
 <h3>Reactive forms</h3>
 
 <div *ngFor="let formGroupItem of getFormControls; let idx = index">
   <form class="my-form" [formGroup]="formGroupItem">
     <div>
       <label>Username:</label>
-      <input type="text" [(ngModel)]="username"  formControlName="username">
+      <input type="text" formControlName="username">
       <div *ngIf="formGroupItem.touched">
         <div class="red-text" *ngIf="usernameCtrl(formGroupItem, 'username')?.required">Обязательное поле</div>
         <div class="red-text" *ngIf="usernameCtrl(formGroupItem, 'username')?.minlength">Минимальная длина должно быть 3 символов</div>
@@ -15,7 +12,7 @@
     </div>
     <div>
       <label>Password:</label>
-      <input type="password" formControlName="password" ngModel>
+      <input type="password" formControlName="password">
     </div>
     <div>
       <label>Full name:</label>
@@ -34,23 +31,4 @@
   <button type="submit" (click)="addUserFormGroup()">Add user form group</button>
 </div>
 
-<button type="button" (click)="addItem()">Добавить</button>
-
-
-
-<ul>
-  <li *ngFor="let item of items">{{item}}</li>
-</ul>
-
-
-<!--<div>-->
-<!--  <input type="text" [(ngModel)]="username">-->
-
-<!--  <button type="button" (click)="addItem2()">Добавить</button>-->
-<!--</div>-->
-
-<p>UserName: {{nameFromData}}</p>
-
-
-<button (click)="setUserName(username)">Save UserName LocalStorage</button>
 

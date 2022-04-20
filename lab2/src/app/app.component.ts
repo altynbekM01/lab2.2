@@ -47,4 +47,6 @@ export class AppComponent implements OnChanges {
   }
 
   nummers_array = [1, 2, 3, 4, 5];
+
+  showPreviouse = false;
 }
